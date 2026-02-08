@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Priyanshu Dixit | Portfolio</title>
+    <meta name="description" content="Interactive portfolio of Priyanshu Dixit - AI & ML Enthusiast">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <div class="portfolio-container">
+        <!-- Hero Section with Avatar -->
+        <header class="hero-section">
+            <div class="avatar-container">
+                <div class="avatar-glow"></div>
+                <img src="{{ url_for('static', filename='images/profile.jpeg') }}" alt="Priyanshu Dixit"
+                    class="hero-avatar" id="hero-avatar"
+                    onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Priyanshu&backgroundColor=6366f1'">
+            </div>
+            <div class="hero-text">
+                <p class="greeting">Hey, I'm Priyanshu 👋</p>
+                <h1 class="title">AI & ML Developer</h1>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Priyanshu-dixit5" target="_blank" class="social-btn" data-tooltip="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/priyanshu-dixit-46aa932b5" target="_blank" class="social-btn"
+                    data-tooltip="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:priyanshudixit768@gmail.com" class="social-btn" data-tooltip="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- Chat Interface -->
+        <main class="chat-section">
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-bubble">
+                        <p>Hello! I'm Priyanshu's AI assistant. 🤖</p>
+                        <p>I can tell you about his <strong>skills</strong>, <strong>projects</strong>,
+                            <strong>experience</strong>, and more!
+                        </p>
+                        <p>What would you like to know?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions" id="quick-actions">
+                <button class="action-chip" data-action="about">
+                    <i class="fas fa-user"></i> About Me
+                </button>
+                <button class="action-chip" data-action="skills">
+                    <i class="fas fa-code"></i> Skills
+                </button>
+                <button class="action-chip" data-action="projects">
+                    <i class="fas fa-rocket"></i> Projects
+                </button>
+                <button class="action-chip" data-action="experience">
+                    <i class="fas fa-briefcase"></i> Experience
+                </button>
+                <button class="action-chip" data-action="education">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </button>
+                <button class="action-chip" data-action="certifications">
+                    <i class="fas fa-certificate"></i> Certifications
+                </button>
+                <button class="action-chip" data-action="resume">
+                    <i class="fas fa-file-pdf"></i> Resume
+                </button>
+                <button class="action-chip" data-action="contact">
+                    <i class="fas fa-envelope"></i> Contact
+                </button>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Ask me anything..." autocomplete="off">
+                    <button id="send-btn" aria-label="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Image Modal for Certificates -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <img src="" alt="Certificate" id="modalImage">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/data.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
